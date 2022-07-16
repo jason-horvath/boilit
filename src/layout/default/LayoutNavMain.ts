@@ -1,27 +1,27 @@
 import {html, css, LitElement} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
-import '@components/nav/NavLink';
+import '@routing/components/RouteLink';
 
 interface NavLinkInterface {
-  href: String;
+  uri: String;
   text: String;
 }
 
 @customElement('layout-nav-main')
-export class LayoutNavMain extends LitElement {
+export default class LayoutNavMain extends LitElement {
   static override styles = css`
-    nav-link{
+    route-link{
       margin: 15px;
     }
   `;
 
   @property({type: Array}) navLinks: NavLinkInterface[] = [
     {
-      href: '/home',
+      uri: 'home',
       text: 'Home'
     },
     {
-      href: '/about',
+      uri: 'about',
       text: 'About'
     },
   ];
@@ -30,7 +30,7 @@ export class LayoutNavMain extends LitElement {
     return html`
       <div class="layout-nav-main">
         ${this.navLinks.map(navLink => {
-          return html`<nav-link hRef=${navLink.href}>${navLink.text}</nav-link>`;
+          return html`<route-link uri=${navLink.uri}>${navLink.text}</route-link>`;
         })}
       </div>
     `;
