@@ -1,4 +1,5 @@
 {
+	"extends": "./tsconfig.paths",
 	"compilerOptions": {
 		"target": "es2019",
 		"module": "es2020",
@@ -30,5 +31,4 @@
 	},
 	"include": ["src/**/*.ts"],
 	"exclude": [],
-	"extends": "./tsconfig.paths"
 }
