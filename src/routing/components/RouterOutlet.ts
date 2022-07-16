@@ -1,6 +1,6 @@
 import {html, css, LitElement} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
-import RouteCollection from '../RouteCollection';
+import RouteCollection from '@routing/RouteCollection';
 
 @customElement('router-outlet')
 export default class RouterOutlet extends LitElement {
