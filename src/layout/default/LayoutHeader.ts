@@ -3,7 +3,7 @@ import {customElement, property} from 'lit/decorators.js';
 import '@layout/default/LayoutNavMain';
 
 @customElement('layout-header')
-export class LayoutFooter extends LitElement {
+export default class LayoutFooter extends LitElement {
   static override styles = css`
     header {
       display: flex;
