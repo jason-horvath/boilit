@@ -2,7 +2,7 @@ import {html, css, LitElement} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
 
 @customElement('layout-footer')
-export class LayoutHeader extends LitElement {
+export default class LayoutHeader extends LitElement {
   static override styles = css`
     footer {
       background-color: #eee;
