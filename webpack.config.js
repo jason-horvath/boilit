@@ -34,6 +34,7 @@ module.exports = {
     alias: {
       "@components": path.resolve(__dirname, 'src/components'),
       "@layout": path.resolve(__dirname, 'src/layout'),
+      "@routing": path.resolve(__dirname, 'src/routing'),
       "@views": path.resolve(__dirname, 'src/views'),
     }
   },
