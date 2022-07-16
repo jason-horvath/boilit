@@ -2,10 +2,12 @@
   "compilerOptions": {
     "baseUrl": "src",
     "paths": {
-      "@components": ["components/*"],
-      "@layout": ["layout/*"],
-      "@routing": ["routing/*"],
-      "@views": ["views/*"],
+      "@components/*": ["components/*"],
+      "@config/*": ["config/*"],
+      "@layout/*": ["layout/*"],
+      "@routing/*": ["routing/*"],
+      "@views/*": ["views/*"],
+      "@/*": ["*"],
     }
   }
 }
