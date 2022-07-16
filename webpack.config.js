@@ -13,7 +13,8 @@ module.exports = {
   devServer: {
     liveReload: true,
     port: process.env.APP_DEV_PORT,
-    open: ['./']
+    open: ['./'],
+    historyApiFallback: true,
   },
   module: {
     rules: [
@@ -33,6 +34,7 @@ module.exports = {
     extensions: ['.tsx', '.ts', '.js'],
     alias: {
       "@components": path.resolve(__dirname, 'src/components'),
+      "@config": path.resolve(__dirname, 'src/config'),
       "@layout": path.resolve(__dirname, 'src/layout'),
       "@routing": path.resolve(__dirname, 'src/routing'),
       "@views": path.resolve(__dirname, 'src/views'),
