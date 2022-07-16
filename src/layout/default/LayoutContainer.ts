@@ -1,6 +1,6 @@
 import {html, css, LitElement} from 'lit';
 import {customElement} from 'lit/decorators.js';
-import RouterOutlet from '../../routing/components/RouterOutlet';
+import RouterOutlet from '@routing/components/RouterOutlet';
 import routes from '../../config/routes';
 
 const outlet = new RouterOutlet(routes);
