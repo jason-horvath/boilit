@@ -3,10 +3,10 @@ import {customElement} from 'lit/decorators.js';
 import '@layout/default/LayoutContainer';
 import '@layout/default/LayoutFooter';
 import '@layout/default/LayoutHeader';
-import '@views/Home/HomeView'
+import '@views/HomeView'
 
 @customElement('app-root')
-export class AppRoot extends LitElement {
+export default  class AppRoot extends LitElement {
   static override styles = css`p { color: blue }`;;
 
   override render() {
