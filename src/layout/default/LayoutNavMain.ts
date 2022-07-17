@@ -10,18 +10,21 @@ interface NavLinkInterface {
 @customElement('layout-nav-main')
 export default class LayoutNavMain extends LitElement {
   static override styles = css`
-    route-link{
+    route-link {
       margin: 15px;
+    }
+    route-link:hover {
+      cursor: pointer;
     }
   `;
 
   @property({type: Array}) navLinks: NavLinkInterface[] = [
     {
-      uri: 'home',
+      uri: '/',
       text: 'Home'
     },
     {
-      uri: 'about',
+      uri: '/about',
       text: 'About'
     },
   ];
