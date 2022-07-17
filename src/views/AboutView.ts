@@ -8,7 +8,7 @@ export class AboutView extends LitElement {
       padding: 1em;
     }
   `;
-
+  
   @property({type: String}) aboutTitle = 'This is the about view.';
 
   override render() {
