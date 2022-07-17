@@ -1,6 +1,6 @@
 import {css, html, LitElement} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
-// import RouteLinkEvent from '@routing/events/RouteLinkEvent'
+import RouteLinkEvent from '../events/RouteLinkEvent'
 
 @customElement('route-link')
 export default class RouteLink extends LitElement {
@@ -14,24 +14,29 @@ export default class RouteLink extends LitElement {
   override connectedCallback() {
     super.connectedCallback()
     console.log(this.uri)
-    this.addEventListener('click', () => this.navigate())
+    this.addEventListener('onmousedown', () => this.navigate())
   }
 
   navigate() {
     console.log(this.uri);
-    window.dispatchEvent(this.getNavigateEvent())
+    if(this.uri === window.location.pathname) {
+      return false;
+    }
+
+    return window.dispatchEvent(this.getNavigateEvent())
   }
 
   getNavigateEvent() {
     const event = new CustomEvent('route-navigate', {
+      bubbles: false,
       detail: {
-        uri: this.uri
-      }
+        uri: this.uri,
+      } as RouteLinkEvent
     })
     // console.log(event);
     return event;
   }
   override render() {
-    return html`<a @click=${() => this.navigate()}><slot></slot></a>`;
+    return html`<a @click=${this.navigate}><slot></slot></a>`;
   }
 }
