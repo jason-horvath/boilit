@@ -1,10 +1,8 @@
 import {html, css, LitElement} from 'lit';
 import {customElement} from 'lit/decorators.js';
-import RouterOutlet from '@routing/components/RouterOutlet';
-import routes from '@config/routes';
+import '../../routing/components/RouterOutlet';
+import routes from '../../config/routes';
 
-const outlet = new RouterOutlet(routes);
-console.log(outlet);
 @customElement('layout-container')
 export default class LayoutContainer extends LitElement {
   static override styles = css`
@@ -17,8 +15,7 @@ export default class LayoutContainer extends LitElement {
     return html`
       <div class="layout-container">
         <slot name="header"></slot>
-        <slot name="view"></slot>
-        <router-outlet></router-outlet>
+        <router-outlet .routes=${routes}></router-outlet>
         <slot name="footer"></slot>
       </div>
     `;
