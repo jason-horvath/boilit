@@ -9,7 +9,9 @@ export default class RouteLink extends LitElement {
       cursor: pointer;
     }
   `;
-  @property({type: String}) uri = '';
+
+  @property({type: String})
+  uri = '';
   
   override connectedCallback() {
     super.connectedCallback()
