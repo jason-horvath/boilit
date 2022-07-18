@@ -6,3 +6,6 @@ node_modules
 
 # yarn
 yarn-error.log
+
+# Mac OS
+.DS_Store
