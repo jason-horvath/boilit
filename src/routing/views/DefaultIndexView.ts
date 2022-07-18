@@ -4,23 +4,27 @@ import {customElement} from 'lit/decorators.js';
 @customElement('lit-router-kit-default-index')
 export class DefaultIndexView extends LitElement {
   static override styles = css`
-    .not-found-view {
+    .default-index-view {
       text-align: center;
     }
     h2 {
       font-size: 4em;
       font-weight: bold;
     }
-    .not-found-message {
-      
+    .default-index-message {
+      padding: 1em;
+      margin: 1em;
+      background-color: #eee;
+      border: 1px solid #ccc;
+      border-radius: 5px;
     }
   `;
 
   override render () {
     return html`
-      <div class="not-found-view">
+      <div class="default-index-view">
         <h2>Default Index</h2>
-        <div class="not-found-message">
+        <div class="default-index-message">
           <p>This is the default index fallback route that comes with the boilit-router package.</p>
           <p>To use your own route, simply add a route to your own app routes with the '/' key.</p>
         </div>
