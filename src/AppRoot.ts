@@ -3,7 +3,6 @@ import {customElement} from 'lit/decorators.js';
 import '@layout/default/LayoutContainer';
 import '@layout/default/LayoutFooter';
 import '@layout/default/LayoutHeader';
-import '@views/HomeView'
 
 @customElement('app-root')
 export default  class AppRoot extends LitElement {

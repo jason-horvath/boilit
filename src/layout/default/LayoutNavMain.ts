@@ -1,6 +1,6 @@
 import {html, css, LitElement} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
-import '../../routing';
+import '@larzilla/boilit-router/link';
 
 interface NavLinkInterface {
   uri: String;
