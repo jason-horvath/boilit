@@ -2,16 +2,16 @@ import { LitElement } from 'lit';
 import RouteMeta from '../types/RouteMeta';
 
 export default class Route {
-  customElementName: string = '';
-  component: LitElement = {} as LitElement;
-  meta: RouteMeta = {};
+  customElementName: string;
+  component: LitElement;
+  meta: RouteMeta;
   isProtected: boolean = false;
 
   constructor(
     customElementName: string,
     component: LitElement,
     isProtected: boolean = false,
-    meta: Object = {}
+    meta: RouteMeta = {}
   ) {
     this.customElementName = customElementName;
     this.component = component;
