@@ -1,17 +1,17 @@
 import { LitElement } from 'lit';
-import RouteMeta from '../types/RouteMeta';
+import RouteMetaData from '../types/RouteMetaData';
 
 export default class Route {
   customElementName: string;
   component: LitElement;
-  meta: RouteMeta;
+  meta: RouteMetaData;
   isProtected: boolean = false;
 
   constructor(
     customElementName: string,
     component: LitElement,
     isProtected: boolean = false,
-    meta: RouteMeta = {}
+    meta: RouteMetaData = {}
   ) {
     this.customElementName = customElementName;
     this.component = component;
@@ -19,7 +19,7 @@ export default class Route {
     this.meta = meta;
   }
 
-  addMeta(meta: RouteMeta) {
+  addMeta(meta: RouteMetaData) {
     this.meta = meta;
   }
 
