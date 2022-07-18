@@ -1,7 +1,7 @@
 import {html, css, LitElement} from 'lit';
 import {customElement} from 'lit/decorators.js';
 
-@customElement('lit-router-kit-default-index')
+@customElement('default-index-view')
 export class DefaultIndexView extends LitElement {
   static override styles = css`
     .default-index-view {
