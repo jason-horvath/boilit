@@ -4,7 +4,7 @@ import RouteCollection from '../core/RouteCollection';
 import Route from '../core/Route';
 import routeElement from '../directives/RouteElementDirective';
 import RouteEntry from '../core/RouteEntry';
-import RouteMeta from '../types/RouteMeta';
+import RenderProps from '../core/RenderProps';
 
 @customElement('router-outlet')
 export default class RouterOutlet extends LitElement {
@@ -20,7 +20,10 @@ export default class RouterOutlet extends LitElement {
   routeTag = `/`;
 
   @property()
-  routeParams: Map<String, String> = new Map<String, String>(); 
+  routeParams: Map<String, String> = new Map<String, String>();
+  
+  @property()
+  routeEntry: RouteEntry = new RouteEntry('', undefined);
 
   override async connectedCallback() {
     super.connectedCallback();
@@ -32,10 +35,10 @@ export default class RouterOutlet extends LitElement {
   }
 
   navigateToPathname(path: string) {
-    const routeEntry = this.routes.get(path);
+    this.routeEntry = this.routes.get(path);
     // const routePath = routeEntry.getPath();
-    const route = routeEntry.getRoute();
-    this.setRouteParams(routeEntry);
+    const route = this.routeEntry.getRoute();
+    this.setRouteParams(this.routeEntry);
     console.log(this.routeParams);
     if(route instanceof Route) {
       window.history.pushState({}, '', path);
@@ -81,18 +84,22 @@ export default class RouterOutlet extends LitElement {
     return elementName;
   }
 
-  getRouteMeta(): RouteMeta {
-    return {
-      data: {
-        params: this.routeParams
-      }
+  getRenderProps(): RenderProps {
+    
+    const rederProps = {
+      title: this.routeEntry.getRoute()?.meta.title ?? '',
+      description: this.routeEntry.getRoute()?.meta.title ?? '',
+      params: this.routeParams ?? new Map(),
+      vars: this.routeEntry.getRoute()?.meta?.vars ?? new Map()
     }
+
+    return new RenderProps(rederProps);
   }
-  
+
   throwError(message: string) {
     throw new Error(`Router Outlet Error: ${message}`);
   }
   override render() {
-    return html`<span>${routeElement(this.routeTag, this.getRouteMeta())}</span>`;
+    return html`<span>${routeElement(this.routeTag, this.getRenderProps())}</span>`;
   }
 }
