@@ -1,7 +1,8 @@
+import RouteMetaData from './RouteMetaData';
 type RouteMeta = {
   title?: string;
   description?: string;
-  data?: Object;
+  data?: RouteMetaData;
 }
 
 export default RouteMeta;
