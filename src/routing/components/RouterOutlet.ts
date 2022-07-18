@@ -4,6 +4,7 @@ import RouteCollection from '../core/RouteCollection';
 import Route from '../core/Route';
 import routeElement from '../directives/RouteElementDirective';
 import RouteEntry from '../core/RouteEntry';
+import RouteMeta from '../types/RouteMeta';
 
 @customElement('router-outlet')
 export default class RouterOutlet extends LitElement {
@@ -80,14 +81,18 @@ export default class RouterOutlet extends LitElement {
     return elementName;
   }
 
-  getCurrentRoute(routes: RouteCollection) {
-    this.routes = routes;
+  getRouteMeta(): RouteMeta {
+    return {
+      data: {
+        params: this.routeParams
+      }
+    }
   }
-
+  
   throwError(message: string) {
     throw new Error(`Router Outlet Error: ${message}`);
   }
   override render() {
-    return html`<span>${routeElement(this.routeTag, this.routeParams)}</span>`;
+    return html`<span>${routeElement(this.routeTag, this.getRouteMeta())}</span>`;
   }
 }
