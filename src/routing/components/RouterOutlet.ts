@@ -55,6 +55,7 @@ export default class RouterOutlet extends LitElement {
       }
     })
   }
+
   redirectNotFound() {
     const route = this.routes.get(this.notFoundUri);
     if(route instanceof Route) {
