@@ -4,13 +4,14 @@
   "description": "The Boiler Kit for Lit",
   "main": "src/index.ts",
   "repository": "https://github.com/jason-horvath/boilit",
-  "author": "Jason Horvath",
+  "author": "Jason Horvath <jason.horvath@larzilla.com>",
   "license": "MIT",
   "private": false,
   "scripts": {
     "dev": "webpack serve"
   },
   "dependencies": {
+    "@larzilla/boilit-router": "^1.0.5",
     "lit": "^2.2.7"
   },
   "devDependencies": {
