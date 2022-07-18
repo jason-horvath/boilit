@@ -1,5 +1,6 @@
 type RouteMetaData = {
-  params?: Map<String, String>;
+  title?: string;
+  description?: string;
   vars?: Map<String, any>;
 }
 
