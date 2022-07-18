@@ -5,7 +5,6 @@
       "@components/*": ["components/*"],
       "@config/*": ["config/*"],
       "@layout/*": ["layout/*"],
-      "@routing/*": ["routing/*"],
       "@views/*": ["views/*"],
       "@/*": ["*"],
     }
