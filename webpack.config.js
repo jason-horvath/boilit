@@ -36,7 +36,6 @@ module.exports = {
       "@components": path.resolve(__dirname, 'src/components'),
       "@config": path.resolve(__dirname, 'src/config'),
       "@layout": path.resolve(__dirname, 'src/layout'),
-      "@routing": path.resolve(__dirname, 'src/routing'),
       "@views": path.resolve(__dirname, 'src/views'),
     }
   },
