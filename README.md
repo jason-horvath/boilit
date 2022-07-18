@@ -16,6 +16,10 @@ If you do not have Yarn, install it, and then `yarn install`. Make a copy of `.e
 
 To start the server run `yarn dev`. Happy sandboxing!
 
-### Future plans
+### Routing Package
 
-A router package to suppert [Lit 2.2.7](https://github.com/lit/lit/releases/tag/lit%402.2.7) is near completion, and will be released into its own package soon. It will be used as dependency here.
+I have created a router package called [BoiLit Router](https://www.npmjs.com/package/@larzilla/boilit-router) that supperts [Lit 2.x](https://lit.dev). You can find the source at [BoiLit Router GitHub](https://github.com/jason-horvath/boilit-router).
+
+#### Contributing
+
+Contributions to any and all repositories are welcome!
