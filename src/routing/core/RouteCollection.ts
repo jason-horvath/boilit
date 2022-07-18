@@ -1,4 +1,4 @@
-import Route from '@routing/core/Route';
+import Route from './Route';
 export default class RouteCollection {
 
   private routeMap = new Map<String, Route>()
