@@ -3,16 +3,23 @@ import {customElement, property} from 'lit/decorators.js';
 import RouteCollection from '../core/RouteCollection';
 import Route from '../core/Route';
 import routeElement from '../directives/RouteElementDirective';
+import RouteEntry from '../core/RouteEntry';
 
 @customElement('router-outlet')
 export default class RouterOutlet extends LitElement {
   static override styles = css`p { color: blue }`;
 
-  @property() notFoundUri: string = '/404';
+  @property()
+  notFoundUri: string = '/404';
 
-  @property() routes: RouteCollection = new RouteCollection();
+  @property()
+  routes: RouteCollection = new RouteCollection();
 
-  @property({type: String}) routeTag = `/`;
+  @property({type: String})
+  routeTag = `/`;
+
+  @property()
+  routeParams: Map<String, String> = new Map<String, String>(); 
 
   override async connectedCallback() {
     super.connectedCallback();
@@ -24,7 +31,11 @@ export default class RouterOutlet extends LitElement {
   }
 
   navigateToPathname(path: string) {
-    const route = this.routes.get(path);
+    const routeEntry = this.routes.get(path);
+    // const routePath = routeEntry.getPath();
+    const route = routeEntry.getRoute();
+    this.setRouteParams(routeEntry);
+    console.log(this.routeParams);
     if(route instanceof Route) {
       window.history.pushState({}, '', path);
       this.routeTag = route.customElementName;
@@ -33,6 +44,17 @@ export default class RouterOutlet extends LitElement {
     }
   }
 
+  setRouteParams(routeEntry: RouteEntry) {
+    const entryParams = routeEntry.getParams();
+    const pathParts = window.location.pathname.split('/');
+    [...entryParams.keys()].map(name => {
+      const pathKey = entryParams.get(name);
+      if(typeof pathKey === 'number') {
+        const value = pathParts[pathKey]
+        this.routeParams.set(name, value);
+      }
+    })
+  }
   redirectNotFound() {
     const route = this.routes.get(this.notFoundUri);
     if(route instanceof Route) {
@@ -65,6 +87,6 @@ export default class RouterOutlet extends LitElement {
     throw new Error(`Router Outlet Error: ${message}`);
   }
   override render() {
-    return html`<span>${routeElement(this.routeTag)}</span>`;
+    return html`<span>${routeElement(this.routeTag, this.routeParams)}</span>`;
   }
 }
