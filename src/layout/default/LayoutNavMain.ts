@@ -1,6 +1,6 @@
 import {html, css, LitElement} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
-import '../../routing/components/RouteLink';
+import '../../routing';
 
 interface NavLinkInterface {
   uri: String;

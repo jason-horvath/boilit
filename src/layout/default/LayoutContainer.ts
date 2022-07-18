@@ -1,6 +1,6 @@
 import {html, css, LitElement} from 'lit';
 import {customElement} from 'lit/decorators.js';
-import '../../routing/components/RouterOutlet';
+import '../../routing/outlet';
 import routes from '../../config/routes';
 
 @customElement('layout-container')
