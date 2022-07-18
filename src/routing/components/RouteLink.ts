@@ -1,6 +1,6 @@
 import {css, html, LitElement} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
-import RouteLinkEvent from '../events/RouteLinkEvent'
+import RouteLinkEvent from '../types/RouteLinkEvent'
 
 @customElement('route-link')
 export default class RouteLink extends LitElement {
