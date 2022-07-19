@@ -31,6 +31,7 @@ module.exports = {
     ],
   },
   resolve: {
+    symlinks: true,
     extensions: ['.tsx', '.ts', '.js'],
     alias: {
       "@components": path.resolve(__dirname, 'src/components'),
