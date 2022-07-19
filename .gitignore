@@ -7,8 +7,8 @@ node_modules
 # yarn
 yarn-error.log
 
-# Mac OS
-.DS_Store
-
 # BoiLit Router
 boilit-router
+
+# Mac OS
+.DS_Store
