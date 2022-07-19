@@ -3,7 +3,10 @@
   "version": "0.1.0",
   "description": "The Boiler Kit for Lit",
   "main": "src/index.ts",
-  "repository": "https://github.com/jason-horvath/boilit",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jason-horvath/boilit"
+  },
   "author": "Jason Horvath <jason.horvath@larzilla.com>",
   "license": "MIT",
   "private": false,
