@@ -2,10 +2,6 @@
 
 The Boiler Plate Kit for Lit. The name is somewhat obvioulsy derived from the term "boiler plate" and "Lit" to become "BoiLit". This was inspired by the lack of response when attempting to be a contributor to the official [Lit Typescript Starter Kit](https://github.com/lit/lit-element-starter-ts). I tried to make it as straight forward as possible to install and understand what is happening.
 
-### Contributing
-
-Anyone that would like to contribute, feel free to put in a pull request.
-
 ### Installation
 
 If you do not have Yarn, install it, and then `yarn install`. Make a copy of `.env.example` into `.env`.
