@@ -9,3 +9,6 @@ yarn-error.log
 
 # Mac OS
 .DS_Store
+
+# BoiLit Router
+boilit-router
