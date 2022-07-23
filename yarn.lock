@@ -47,10 +47,10 @@
     "@jridgewell/resolve-uri" "^3.0.3"
     "@jridgewell/sourcemap-codec" "^1.4.10"
 
-"@larzilla/boilit-router@^1.2.3":
-  version "1.2.3"
-  resolved "https://registry.yarnpkg.com/@larzilla/boilit-router/-/boilit-router-1.2.3.tgz#b1f0f290dd9d43fb077871612bce72d6843b4142"
-  integrity sha512-m5I/FQdpujnxyXRATduBu4srhptY++0fJyeEeNZmAUk9OkIpDnt/0yHlm/ODFUMABbwwqqJGjlbv5MaAnB4CAg==
+"@larzilla/boilit-router@^1.2.4":
+  version "1.2.4"
+  resolved "https://registry.yarnpkg.com/@larzilla/boilit-router/-/boilit-router-1.2.4.tgz#787bdeb0dd4d5d121643d142f9210cd3185fc545"
+  integrity sha512-JAzV/XHENssJzF6dTmFxLNF/v6B4olFfXu1oKsGOXaAcf5jCIUqwpJ1ukI08rpKevxeIc8acmjOa6V1F8WYamg==
   dependencies:
     lit "^2.2.7"
 
