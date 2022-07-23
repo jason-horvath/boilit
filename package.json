@@ -14,7 +14,7 @@
     "dev": "webpack serve"
   },
   "dependencies": {
-    "@larzilla/boilit-router": "^1.2.1",
+    "@larzilla/boilit-router": "^1.2.3",
     "lit": "^2.2.7"
   },
   "devDependencies": {
